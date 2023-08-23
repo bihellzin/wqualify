@@ -28,7 +28,10 @@ const Footer = ({ handleMenuClick }) => {
         }}
         icon={<HiOutlineHome size={45} />}
         size={"large"}
-        onClick={() => navigate("/")}
+        onClick={() => {
+          handleMenuClick(false);
+          return navigate("/");
+        }}
       />
       <Button
         style={{
