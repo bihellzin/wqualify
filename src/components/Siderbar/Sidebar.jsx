@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import { FaUmbrellaBeach, FaWater } from "react-icons/fa";
 
 const Sidebar = ({ sidebarOpen, handleSidebarOpen }) => {
   const navigate = useNavigate();
@@ -19,6 +20,12 @@ const Sidebar = ({ sidebarOpen, handleSidebarOpen }) => {
       }}
     >
       <Button
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        icon={<FaUmbrellaBeach size={20} />}
         onClick={() => {
           handleSidebarOpen((prev) => !prev);
           return navigate("balneabilidade");
@@ -27,6 +34,12 @@ const Sidebar = ({ sidebarOpen, handleSidebarOpen }) => {
         O que é balneabilidade?
       </Button>
       <Button
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        icon={<FaWater size={20} />}
         onClick={() => {
           handleSidebarOpen((prev) => !prev);
           return navigate("categoria-agua");
