@@ -1,52 +1,58 @@
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import HomeIcon from "../../assets/home.svg";
-import MapIcon from "../../assets/map.svg";
-import MenuIcon from "../../assets/menu.svg";
+import { Button } from "antd";
+import { GrMapLocation } from "react-icons/gr";
+import { HiOutlineHome, HiOutlineMenu } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
-const Footer = () => (
-  <footer
-    style={{
-      backgroundColor: "#FFD8A8",
-      position: "fixed",
-      width: "100%",
-      bottom: "0",
-      color: "black",
-      fontSize: "25px",
-    }}
-  >
-    <ToggleGroup.Root
-      type="single"
+const Footer = ({ handleMenuClick }) => {
+  const navigate = useNavigate();
+  return (
+    <footer
       style={{
+        backgroundColor: "#FFD8A8",
+        position: "fixed",
+        width: "100%",
+        bottom: "0",
+        color: "black",
+        fontSize: "25px",
         display: "flex",
         justifyContent: "space-around",
+        padding: "8px 0",
       }}
     >
-      <ToggleGroup.Item
-        className="ToggleGroupItem"
-        value="home"
-        aria-label="Home"
-        style={{ backgroundColor: "transparent" }}
-      >
-        <img src={HomeIcon} alt="" />
-      </ToggleGroup.Item>
-      <ToggleGroup.Item
-        className="ToggleGroupItem"
-        value="map"
-        aria-label="Map"
-        style={{ backgroundColor: "transparent" }}
-      >
-        <img src={MapIcon} alt="" />
-      </ToggleGroup.Item>
-      <ToggleGroup.Item
-        className="ToggleGroupItem"
-        value="menu"
-        aria-label="Menu"
-        style={{ backgroundColor: "transparent" }}
-      >
-        <img src={MenuIcon} alt="" />
-      </ToggleGroup.Item>
-    </ToggleGroup.Root>
-  </footer>
-);
+      <Button
+        style={{
+          width: 70,
+          height: 70,
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+        }}
+        icon={<HiOutlineHome size={45} />}
+        size={"large"}
+        onClick={() => navigate("/")}
+      />
+      <Button
+        style={{
+          width: 70,
+          height: 70,
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+        }}
+        icon={<GrMapLocation size={40} />}
+        size={"large"}
+      />
+      <Button
+        style={{
+          width: 70,
+          height: 70,
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+        }}
+        icon={<HiOutlineMenu size={45} />}
+        size={"large"}
+        onClick={() => handleMenuClick((prev) => !prev)}
+      />
+    </footer>
+  );
+};
 
 export default Footer;

@@ -1,9 +1,8 @@
 import "../../App.css";
-import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <div
         style={{
           display: "flex",
@@ -17,8 +16,7 @@ const Home = () => {
         <h1>Sobre</h1>
         <h1>Suas Praias</h1>
       </div>
-      <Footer></Footer>
-    </>
+    </div>
   );
 };
 
