@@ -2,10 +2,11 @@ import "./styles.css";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
+import BeachSvg from "../../assets/Rectangle 8.svg";
 
 import { Icon, divIcon, point } from "leaflet";
 import Placeholder from "../../assets/placeholder.png";
-
+import Title from "../../assets/image 14.png";
 // create custom icon
 const customIcon = new Icon({
   // iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
@@ -47,62 +48,211 @@ const markers = [
 export default function MapPage() {
   console.log("loading");
   return (
-    <MapContainer
-      center={[-8.0500767, -34.92497]}
-      zoom={10}
-      style={{ zIndex: 0, width: "100%" }}
-    >
-      {/* OPEN STREEN MAPS TILES */}
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    // <MapContainer
+    //   center={[-8.0500767, -34.92497]}
+    //   zoom={10}
+    //   style={{ zIndex: 0, width: "100%" }}
+    // >
+    //   {/* OPEN STREEN MAPS TILES */}
+    //   <TileLayer
+    //     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    //     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    //   />
+    //   {/* WATERCOLOR CUSTOM TILES */}
+    //   {/* <TileLayer
+    //     attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    //     url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
+    //   /> */}
+    //   {/* GOOGLE MAPS TILES */}
+    //   {/* <TileLayer
+    //     attribution="Google Maps"
+    //     // url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}" // regular
+    //     // url="http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}" // satellite
+    //     url="http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}" // terrain
+    //     maxZoom={20}
+    //     subdomains={["mt0", "mt1", "mt2", "mt3"]}
+    //   /> */}
+
+    //   <MarkerClusterGroup
+    //     chunkedLoading
+    //     iconCreateFunction={createClusterCustomIcon}
+    //   >
+    //     {/* Mapping through the markers */}
+    //     {markers.map((marker) => (
+    //       <Marker
+    //         key={marker.geocode}
+    //         position={marker.geocode}
+    //         icon={customIcon}
+    //       >
+    //         <Popup>
+    //           <p>{marker.name}</p>
+    //           <p>{marker.address}</p>
+    //           <p>{marker.waterCategory}</p>
+    //         </Popup>
+    //       </Marker>
+    //     ))}
+
+    //     {/* Hard coded markers */}
+    //     {/* <Marker position={[51.505, -0.09]} icon={customIcon}>
+    //       <Popup>This is popup 1</Popup>
+    //     </Marker>
+    //     <Marker position={[51.504, -0.1]} icon={customIcon}>
+    //       <Popup>This is popup 2</Popup>
+    //     </Marker>
+    //     <Marker position={[51.5, -0.09]} icon={customIcon}>
+    //       <Popup>This is popup 3</Popup>
+    //     </Marker>
+    //    */}
+    //   </MarkerClusterGroup>
+    // </MapContainer>
+    <div className="map-container">
+      <img src={BeachSvg} alt="" />
+      <img
+        src={Title}
+        style={{
+          position: "absolute",
+          top: 8,
+          left: 0,
+          right: 0,
+          margin: "0 auto",
+        }}
+        alt=""
       />
-      {/* WATERCOLOR CUSTOM TILES */}
-      {/* <TileLayer
-        attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
-      /> */}
-      {/* GOOGLE MAPS TILES */}
-      {/* <TileLayer
-        attribution="Google Maps"
-        // url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}" // regular
-        // url="http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}" // satellite
-        url="http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}" // terrain
-        maxZoom={20}
-        subdomains={["mt0", "mt1", "mt2", "mt3"]}
-      /> */}
-
-      <MarkerClusterGroup
-        chunkedLoading
-        iconCreateFunction={createClusterCustomIcon}
+      <div
+        style={{
+          position: "absolute",
+          top: 130,
+          left: 165,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
       >
-        {/* Mapping through the markers */}
-        {markers.map((marker) => (
-          <Marker
-            key={marker.geocode}
-            position={marker.geocode}
-            icon={customIcon}
-          >
-            <Popup>
-              <p>{marker.name}</p>
-              <p>{marker.address}</p>
-              <p>{marker.waterCategory}</p>
-            </Popup>
-          </Marker>
-        ))}
-
-        {/* Hard coded markers */}
-        {/* <Marker position={[51.505, -0.09]} icon={customIcon}>
-          <Popup>This is popup 1</Popup>
-        </Marker>
-        <Marker position={[51.504, -0.1]} icon={customIcon}>
-          <Popup>This is popup 2</Popup>
-        </Marker>
-        <Marker position={[51.5, -0.09]} icon={customIcon}>
-          <Popup>This is popup 3</Popup>
-        </Marker>
-       */}
-      </MarkerClusterGroup>
-    </MapContainer>
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Itamaracá</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 185,
+          left: 185,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Paulista</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 270,
+          left: 175,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Olinda</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 330,
+          left: 170,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Recife</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 420,
+          left: 175,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Jaboatao dos Guararapes</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 485,
+          left: 165,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Cabo de Santo Agostinho</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 560,
+          left: 160,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Ipojuca</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 630,
+          left: 145,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Tamandaré</p>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 690,
+          left: 150,
+          display: "flex",
+          alignItems: "center",
+          fontWeight: "bold",
+          color: "#EB580D",
+        }}
+        className="marker"
+      >
+        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
+        <p>Sao José da C. Grande</p>
+      </div>
+    </div>
   );
 }

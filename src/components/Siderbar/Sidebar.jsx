@@ -7,7 +7,7 @@ const Sidebar = ({ sidebarOpen, handleSidebarOpen }) => {
   return (
     <aside
       style={{
-        position: "absolute",
+        position: "fixed",
         height: "calc(100vh - 86px)",
         top: 0,
         right: 0,

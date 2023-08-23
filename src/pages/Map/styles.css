@@ -17,3 +17,13 @@
   font-size: 1.2rem;
   box-shadow: 0 0 0px 5px #fff;
 }
+
+.map-container {
+  background-color: cyan;
+  position: relative;
+  height: 850px;
+
+  @media screen and (min-height: 836px) {
+    height: 800px;
+  }
+}
