@@ -26,22 +26,32 @@ const createClusterCustomIcon = function (cluster) {
 const markers = [
   {
     geocode: [-8.1000767, -34.89097],
-    popUp: "Hello, I am pop up 2",
+    name: "Praia 1",
+    address: "Rua 1",
+    waterCategory: "Imprópria",
   },
   {
     geocode: [-8.1600767, -34.91397],
-    popUp: "Hello, I am pop up 1",
+    name: "Praia 2",
+    address: "Rua 2",
+    waterCategory: "Imprópria",
   },
   {
     geocode: [-8.200767, -34.91797],
-    popUp: "Hello, I am pop up 3",
+    name: "Praia 3",
+    address: "Rua 3",
+    waterCategory: "Imprópria",
   },
 ];
 
 export default function MapPage() {
   console.log("loading");
   return (
-    <MapContainer center={[-8.0500767, -34.92497]} zoom={10}>
+    <MapContainer
+      center={[-8.0500767, -34.92497]}
+      zoom={10}
+      style={{ zIndex: 0, width: "100%" }}
+    >
       {/* OPEN STREEN MAPS TILES */}
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -73,7 +83,11 @@ export default function MapPage() {
             position={marker.geocode}
             icon={customIcon}
           >
-            <Popup>{marker.popUp}</Popup>
+            <Popup>
+              <p>{marker.name}</p>
+              <p>{marker.address}</p>
+              <p>{marker.waterCategory}</p>
+            </Popup>
           </Marker>
         ))}
 
