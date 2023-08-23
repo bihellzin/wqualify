@@ -1,12 +1,13 @@
 import "./styles.css";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import BeachSvg from "../../assets/Rectangle 8.svg";
 
 import { Icon, divIcon, point } from "leaflet";
 import Placeholder from "../../assets/placeholder.png";
 import Title from "../../assets/image 14.png";
+import Marker from "../../components/Marker/Marker";
 // create custom icon
 const customIcon = new Icon({
   // iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
@@ -42,6 +43,54 @@ const markers = [
     name: "Praia 3",
     address: "Rua 3",
     waterCategory: "Imprópria",
+  },
+];
+
+const cities = [
+  {
+    top: 130,
+    left: 165,
+    cityName: "Itamaracá",
+  },
+  {
+    top: 185,
+    left: 185,
+    cityName: "Paulista",
+  },
+  {
+    top: 270,
+    left: 175,
+    cityName: "Olinda",
+  },
+  {
+    top: 330,
+    left: 170,
+    cityName: "Recife",
+  },
+  {
+    top: 420,
+    left: 175,
+    cityName: "Jaboatão dos Guararapes",
+  },
+  {
+    top: 485,
+    left: 165,
+    cityName: "Cabo de Santo Agostinho",
+  },
+  {
+    top: 560,
+    left: 160,
+    cityName: "Ipojuca",
+  },
+  {
+    top: 630,
+    left: 145,
+    cityName: "Tamandaré",
+  },
+  {
+    top: 690,
+    left: 150,
+    cityName: "São José da C. Grande",
   },
 ];
 
@@ -118,141 +167,14 @@ export default function MapPage() {
         }}
         alt=""
       />
-      <div
-        style={{
-          position: "absolute",
-          top: 130,
-          left: 165,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Itamaracá</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 185,
-          left: 185,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Paulista</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 270,
-          left: 175,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Olinda</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 330,
-          left: 170,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Recife</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 420,
-          left: 175,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Jaboatao dos Guararapes</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 485,
-          left: 165,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Cabo de Santo Agostinho</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 560,
-          left: 160,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Ipojuca</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 630,
-          left: 145,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Tamandaré</p>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: 690,
-          left: 150,
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "bold",
-          color: "#EB580D",
-        }}
-        className="marker"
-      >
-        <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
-        <p>Sao José da C. Grande</p>
-      </div>
+      {cities.map((city) => (
+        <Marker
+          top={city.top}
+          left={city.left}
+          cityName={city.cityName}
+          key={city.cityName}
+        />
+      ))}
     </div>
   );
 }
