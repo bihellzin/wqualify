@@ -42,6 +42,10 @@ const Footer = ({ handleMenuClick }) => {
         }}
         icon={<GrMapLocation size={40} />}
         size={"large"}
+        onClick={() => {
+          handleMenuClick(false);
+          return navigate("/mapa");
+        }}
       />
       <Button
         style={{
