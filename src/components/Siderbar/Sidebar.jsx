@@ -1,9 +1,10 @@
 import { Button } from "antd";
-import { useNavigate } from "react-router-dom";
 import { FaUmbrellaBeach, FaWater } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ sidebarOpen, handleSidebarOpen }) => {
   const navigate = useNavigate();
+
   return (
     <aside
       style={{

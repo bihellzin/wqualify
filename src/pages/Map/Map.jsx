@@ -8,6 +8,8 @@ import { Icon, divIcon, point } from "leaflet";
 import Placeholder from "../../assets/placeholder.png";
 import Title from "../../assets/image 14.png";
 import Marker from "../../components/Marker/Marker";
+import { useState } from "react";
+import { Modal } from "antd";
 // create custom icon
 const customIcon = new Icon({
   // iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
@@ -96,6 +98,19 @@ const cities = [
 
 export default function MapPage() {
   console.log("loading");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [city, setCity] = useState(null);
+  console.log(city);
+  function onMarkerClick(city) {
+    setIsModalOpen(true);
+    setCity(city);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+    setCity(null);
+  }
+
   return (
     // <MapContainer
     //   center={[-8.0500767, -34.92497]}
@@ -154,27 +169,40 @@ export default function MapPage() {
     //    */}
     //   </MarkerClusterGroup>
     // </MapContainer>
-    <div className="map-container">
-      <img src={BeachSvg} alt="" />
-      <img
-        src={Title}
-        style={{
-          position: "absolute",
-          top: 8,
-          left: 0,
-          right: 0,
-          margin: "0 auto",
-        }}
-        alt=""
-      />
-      {cities.map((city) => (
-        <Marker
-          top={city.top}
-          left={city.left}
-          cityName={city.cityName}
-          key={city.cityName}
+    <>
+      <div className="map-container">
+        <img src={BeachSvg} alt="" />
+        <img
+          src={Title}
+          style={{
+            position: "absolute",
+            top: 8,
+            left: 0,
+            right: 0,
+            margin: "0 auto",
+          }}
+          alt=""
         />
-      ))}
-    </div>
+        {cities.map((city) => (
+          <Marker
+            top={city.top}
+            left={city.left}
+            cityName={city.cityName}
+            key={city.cityName}
+            city={city}
+            handleClick={onMarkerClick}
+          />
+        ))}
+      </div>
+      <Modal
+        title={city && city.cityName}
+        open={isModalOpen}
+        onOk={closeModal}
+        okText={"Fechar"}
+        cancelButtonProps={{ style: { display: "none" } }}
+      >
+        <h4>Praias</h4>
+      </Modal>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import Placeholder from "../../assets/placeholder.png";
 
-const Marker = ({ top, left, cityName }) => {
+const Marker = ({ top, left, cityName, handleClick, city }) => {
   return (
     <div
       style={{
@@ -13,6 +13,7 @@ const Marker = ({ top, left, cityName }) => {
         color: "#EB580D",
       }}
       className="marker"
+      onClick={() => handleClick(city)}
     >
       <img src={Placeholder} style={{ width: 30, height: 30 }} alt="" />
       <p>{cityName}</p>
