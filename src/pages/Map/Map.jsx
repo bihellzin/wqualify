@@ -1,30 +1,30 @@
-import "./styles.css";
-import "leaflet/dist/leaflet.css";
-// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import MarkerClusterGroup from "react-leaflet-cluster";
 import BeachSvg from "../../assets/Rectangle 8.svg";
+import "./styles.css";
 
-import { Icon, divIcon, point } from "leaflet";
-import Placeholder from "../../assets/placeholder.png";
-import Title from "../../assets/image 14.png";
-import Marker from "../../components/Marker/Marker";
-import { useState } from "react";
+// import "leaflet/dist/leaflet.css";
+// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+// import MarkerClusterGroup from "react-leaflet-cluster";
+// import { Icon, divIcon, point } from "leaflet";
 import { Modal } from "antd";
+import { useState } from "react";
+import Title from "../../assets/image 14.png";
+import Placeholder from "../../assets/placeholder.png";
+import Marker from "../../components/Marker/Marker";
 // create custom icon
-const customIcon = new Icon({
-  // iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
-  iconUrl: Placeholder,
-  iconSize: [38, 38], // size of the icon
-});
+// const customIcon = new Icon({
+//   // iconUrl: "https://cdn-icons-png.flaticon.com/512/447/447031.png",
+//   iconUrl: Placeholder,
+//   iconSize: [38, 38], // size of the icon
+// });
 
 // custom cluster icon
-const createClusterCustomIcon = function (cluster) {
-  return new divIcon({
-    html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
-    className: "custom-marker-cluster",
-    iconSize: point(33, 33, true),
-  });
-};
+// const createClusterCustomIcon = function (cluster) {
+//   return new divIcon({
+//     html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
+//     className: "custom-marker-cluster",
+//     iconSize: point(33, 33, true),
+//   });
+// };
 
 // markers
 const markers = [
@@ -48,6 +48,13 @@ const markers = [
   },
 ];
 
+const categoryColors = {
+  Excelente: "#15880d",
+  "Muito Boa": "#6fb302",
+  Satisfatória: "#C59F1B",
+  Imprópria: "#ED1010",
+};
+
 const cities = [
   {
     top: 130,
@@ -55,17 +62,17 @@ const cities = [
     cityName: "Itamaracá",
     beaches: [
       {
-        address: "Em frente à Rua Santina de Barros",
+        address: "em frente à Rua Santina de Barros",
         name: "Praia de Jaguaribe",
         category: "Imprópria",
       },
       {
-        address: "Em frente à Igreja do Pilar",
+        address: "em frente à Igreja do Pilar",
         name: "Praia de Pilar",
         category: "Imprópria",
       },
       {
-        address: "Em frente ao Forte Orange.",
+        address: "em frente ao Forte Orange",
         name: "Praia do Forte",
         category: "Imprópria",
       },
@@ -78,18 +85,18 @@ const cities = [
     beaches: [
       {
         name: "Praia de Maria Farinha",
-        address: "Em frente ao Cabanga Iate Clube",
+        address: "em frente ao Cabanga Iate Clube",
         category: "Imprópria",
       },
       {
         name: "Praia do Janga",
         address:
-          "Em frente à Rua Cláudio S. Bastos Nº 190 (Cond. Roberto Barbosa)",
+          "em frente à Rua Cláudio S. Bastos Nº 190 (Cond. Roberto Barbosa)",
         category: "Imprópria",
       },
       {
         name: "Praia do Janga",
-        address: "Em frente à Rua Betânia",
+        address: "em frente à Rua Betânia",
         category: "Imprópria",
       },
     ],
@@ -101,23 +108,23 @@ const cities = [
     beaches: [
       {
         name: "Praia de Rio Doce",
-        address: "Em frente à Rua Paulo N. Queiroz, próximo à foz do Rio Doce",
+        address: "em frente à Rua Paulo N. Queiroz, próximo à foz do Rio Doce",
         category: "Imprópria",
       },
       {
         name: "Praia de Bairro Novo",
         address:
-          "Em frente à Av. Ministro Marcos Freire Nº 2039 (Quartel da PE)",
+          "em frente à Av. Ministro Marcos Freire Nº 2039 (Quartel da PE)",
         category: "Imprópria",
       },
       {
         name: "Praia do Carmo",
-        address: "Em frente à Praça João Pessoa, por trás dos CORREIOS.",
+        address: "em frente à Praça João Pessoa, por trás dos CORREIOS",
         category: "Imprópria",
       },
       {
         name: "Praia dos Milagres",
-        address: "Em frente à Praça dos Milagres.",
+        address: "em frente à Praça dos Milagres",
         category: "Imprópria",
       },
     ],
@@ -130,18 +137,18 @@ const cities = [
       {
         name: "Praia do Pina",
         address:
-          "Em frente à Rua Com. Morais com Eng. Antônio de Góes (Cassino Americano)",
+          "em frente à Rua Com. Morais com Eng. Antônio de Góes (Cassino Americano)",
         category: "Imprópria",
       },
       {
         name: "Praia de Boa Viagem",
         address:
-          "Em frente à Avenida Boa Viagem Nº 2840 - Posto 8 (Padaria Boa Viagem)",
+          "em frente à Avenida Boa Viagem Nº 2840 - Posto 8 (Padaria Boa Viagem)",
         category: "Imprópria",
       },
       {
         name: "Praia de Boa Viagem",
-        address: "Em frente à Avenida Boa Viagem Nº 6958 - Posto 15.",
+        address: "em frente à Avenida Boa Viagem Nº 6958 - Posto 15",
         category: "Imprópria",
       },
     ],
@@ -154,24 +161,24 @@ const cities = [
       {
         name: "Praia de Piedade",
         address:
-          "Em frente à Avenida Beira Mar Nº 606 (Hospital da Aeronáutica)",
+          "em frente à Avenida Beira Mar Nº 606 (Hospital da Aeronáutica)",
         category: "Imprópria",
       },
       {
         name: "Praia de Candeias",
         address:
-          "Em frente à Av. Bernardo V. de Melo Nº 5422 (Conj. Residencial Candeias II)",
+          "em frente à Av. Bernardo V. de Melo Nº 5422 (Conj. Residencial Candeias II)",
         category: "Imprópria",
       },
       {
         name: "Praia de Candeias",
         address:
-          "Em frente à Av. Bernardo V. de Melo Nº 6476 - Restaurante Candelária",
+          "em frente à Av. Bernardo V. de Melo Nº 6476 - Restaurante Candelária",
         category: "Imprópria",
       },
       {
         name: "Praia de Barra de Jangada",
-        address: "Em frente ao Nº 10800 (antiga Marina dos Mares).",
+        address: "em frente ao Nº 10800 (antiga Marina dos Mares)",
         category: "Imprópria",
       },
     ],
@@ -183,12 +190,12 @@ const cities = [
     beaches: [
       {
         name: "Praia de Enseada dos Corais",
-        address: "Em frente ao Canal do Boto",
+        address: "em frente ao Canal do Boto",
         category: "Imprópria",
       },
       {
         name: "Praia de Gaibu",
-        address: "Em frente à Avenida Laura Cavalcanti (Centro de Turismo).",
+        address: "em frente à Avenida Laura Cavalcanti (Centro de Turismo)",
         category: "Imprópria",
       },
     ],
@@ -200,12 +207,12 @@ const cities = [
     beaches: [
       {
         name: "Praia de Porto de Galinhas",
-        address: "Em frente à R. Esperança, Escola Manuel L. C. Uchoa.",
+        address: "em frente à R. Esperança, Escola Manuel L. C. Uchoa",
         category: "Imprópria",
       },
       {
         name: "Praia de Ponta de Serrambi",
-        address: "No Pontal - Quadra 01-01, Lote 01-01",
+        address: "no Pontal - Quadra 01-01, Lote 01-01",
         category: "Imprópria",
       },
     ],
@@ -217,17 +224,17 @@ const cities = [
     beaches: [
       {
         name: "Praia dos Carneiros",
-        address: "Em frente ao Condomínio Pontal dos Carneiros",
+        address: "em frente ao Condomínio Pontal dos Carneiros",
         category: "Imprópria",
       },
       {
         name: "Praia de Tamandaré",
-        address: "Em frente ao Hotel Marinas de Tamandaré",
+        address: "em frente ao Hotel Marinas de Tamandaré",
         category: "Imprópria",
       },
       {
         name: "Praia de Tamandaré",
-        address: "Em frente à Rua Nilo Gouveia Filho, em frente à estátua",
+        address: "em frente à Rua Nilo Gouveia Filho, em frente à estátua",
         category: "Imprópria",
       },
     ],
@@ -239,7 +246,7 @@ const cities = [
     beaches: [
       {
         name: "Praia de São José da C. Grande",
-        address: "Em frente a R. da Matriz esquina c/ R. João Francisco Melo",
+        address: "em frente a R. da Matriz esquina c/ R. João Francisco Melo",
         category: "Imprópria",
       },
     ],
@@ -247,7 +254,6 @@ const cities = [
 ];
 
 export default function MapPage() {
-  console.log("loading");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [city, setCity] = useState(null);
   console.log(city);
@@ -357,9 +363,18 @@ export default function MapPage() {
           <ul>
             {city.beaches.map((beach, index) => (
               <li key={index}>
-                <p>{beach.name}</p>
-                <p>{beach.address}</p>
-                <p>{beach.category}</p>
+                <p>
+                  {beach.name}, {beach.address} -{" "}
+                  <span
+                    style={{
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                      color: categoryColors[beach.category],
+                    }}
+                  >
+                    {beach.category}
+                  </span>
+                </p>
               </li>
             ))}
           </ul>
