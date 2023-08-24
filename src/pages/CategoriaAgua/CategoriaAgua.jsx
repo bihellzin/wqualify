@@ -1,33 +1,89 @@
-import { Card } from "antd";
+import { Button, Card, Table } from "antd";
 import "../../App.css";
+import { useState } from "react";
+import { BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi";
 
 const CategoriaAgua = () => {
+  const [showTable, setShowTable] = useState(false);
   return (
-    <div>
-      <div
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 16,
+      }}
+    >
+      <h3> Categoria da água</h3>
+      <Card bordered={true} bodyStyle={{ padding: "8px 16px" }}>
+        {showTable ? (
+          <Table
+            pagination={false}
+            columns={[
+              {
+                title: "Categoria",
+                dataIndex: "categoria",
+                key: "categoria",
+              },
+              {
+                title: "Limite de NMP de coliformes termotolerantes/100ml",
+                dataIndex: "limite",
+                key: "limite",
+              },
+            ]}
+            dataSource={[
+              {
+                key: "excelente",
+                categoria: "Excelente",
+                limite: "Máximo de 250 em 80% ou mais das amostras",
+              },
+              {
+                key: "muito-boa",
+                categoria: "Muito boa",
+                limite: "Máximo de 500 em 80% ou mais das amostras",
+              },
+              {
+                key: "satisfatoria",
+                categoria: "Satisfatória",
+                limite: "Máximo de 1000 em 80% ou mais das amostras",
+              },
+              {
+                key: "impropria",
+                categoria: "Imprópria",
+                limite:
+                  "Acima de 1000 em mais de 20% das amostras ou valor obtido na última amostragem for superior a 2500",
+              },
+            ]}
+          />
+        ) : (
+          <p>
+            Águas usadas para banho (mar e rios) e recreação se classificam em 4
+            categorias: EXCELENTE, MUITO BOA, SATISFATÓRIA ou IMPRÓPRIA. O
+            critério é a presença de coliformes nas amostras de 5 semanas ou com
+            intervalos de 24 horas.
+          </p>
+        )}
+      </Card>
+      <Button
+        shape="circle"
+        icon={
+          showTable ? (
+            <BiChevronLeftCircle size={30} />
+          ) : (
+            <BiChevronRightCircle size={30} />
+          )
+        }
+        size="large"
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           justifyContent: "center",
-          padding: 16,
+          alignItems: "center",
+          marginTop: 8,
         }}
-      >
-        <h3> Categoria da água</h3>
-        <Card bordered={true} bodyStyle={{ padding: "8px 16px" }}>
-          <p>
-            As águas doces, salobras e salinas destinadas à recreação de contato
-            primário podem ser classificadas em quatro categorias: EXCELENTE,
-            MUITO BOA, SATISFATÓRIA ou IMPRÓPRIA.
-          </p>
-          <p>
-            O critério de enquadramento nessas categorias baseia-se nas
-            concentrações de Coliformes termotolerantes em um conjunto de
-            amostras de cinco semanas consecutivas ou em cinco amostragens com
-            intervalo mínimo de 24 horas entre elas.
-          </p>
-        </Card>
-      </div>
+        onClick={() => setShowTable((prev) => !prev)}
+      />
     </div>
   );
 };
