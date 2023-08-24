@@ -53,46 +53,196 @@ const cities = [
     top: 130,
     left: 165,
     cityName: "Itamaracá",
+    beaches: [
+      {
+        address: "Em frente à Rua Santina de Barros",
+        name: "Praia de Jaguaribe",
+        category: "Imprópria",
+      },
+      {
+        address: "Em frente à Igreja do Pilar",
+        name: "Praia de Pilar",
+        category: "Imprópria",
+      },
+      {
+        address: "Em frente ao Forte Orange.",
+        name: "Praia do Forte",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 185,
     left: 185,
     cityName: "Paulista",
+    beaches: [
+      {
+        name: "Praia de Maria Farinha",
+        address: "Em frente ao Cabanga Iate Clube",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia do Janga",
+        address:
+          "Em frente à Rua Cláudio S. Bastos Nº 190 (Cond. Roberto Barbosa)",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia do Janga",
+        address: "Em frente à Rua Betânia",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 270,
     left: 175,
     cityName: "Olinda",
+    beaches: [
+      {
+        name: "Praia de Rio Doce",
+        address: "Em frente à Rua Paulo N. Queiroz, próximo à foz do Rio Doce",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Bairro Novo",
+        address:
+          "Em frente à Av. Ministro Marcos Freire Nº 2039 (Quartel da PE)",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia do Carmo",
+        address: "Em frente à Praça João Pessoa, por trás dos CORREIOS.",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia dos Milagres",
+        address: "Em frente à Praça dos Milagres.",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 330,
     left: 170,
     cityName: "Recife",
+    beaches: [
+      {
+        name: "Praia do Pina",
+        address:
+          "Em frente à Rua Com. Morais com Eng. Antônio de Góes (Cassino Americano)",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Boa Viagem",
+        address:
+          "Em frente à Avenida Boa Viagem Nº 2840 - Posto 8 (Padaria Boa Viagem)",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Boa Viagem",
+        address: "Em frente à Avenida Boa Viagem Nº 6958 - Posto 15.",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 420,
     left: 175,
     cityName: "Jaboatão dos Guararapes",
+    beaches: [
+      {
+        name: "Praia de Piedade",
+        address:
+          "Em frente à Avenida Beira Mar Nº 606 (Hospital da Aeronáutica)",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Candeias",
+        address:
+          "Em frente à Av. Bernardo V. de Melo Nº 5422 (Conj. Residencial Candeias II)",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Candeias",
+        address:
+          "Em frente à Av. Bernardo V. de Melo Nº 6476 - Restaurante Candelária",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Barra de Jangada",
+        address: "Em frente ao Nº 10800 (antiga Marina dos Mares).",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 485,
     left: 165,
     cityName: "Cabo de Santo Agostinho",
+    beaches: [
+      {
+        name: "Praia de Enseada dos Corais",
+        address: "Em frente ao Canal do Boto",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Gaibu",
+        address: "Em frente à Avenida Laura Cavalcanti (Centro de Turismo).",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 560,
     left: 160,
     cityName: "Ipojuca",
+    beaches: [
+      {
+        name: "Praia de Porto de Galinhas",
+        address: "Em frente à R. Esperança, Escola Manuel L. C. Uchoa.",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Ponta de Serrambi",
+        address: "No Pontal - Quadra 01-01, Lote 01-01",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 630,
     left: 145,
     cityName: "Tamandaré",
+    beaches: [
+      {
+        name: "Praia dos Carneiros",
+        address: "Em frente ao Condomínio Pontal dos Carneiros",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Tamandaré",
+        address: "Em frente ao Hotel Marinas de Tamandaré",
+        category: "Imprópria",
+      },
+      {
+        name: "Praia de Tamandaré",
+        address: "Em frente à Rua Nilo Gouveia Filho, em frente à estátua",
+        category: "Imprópria",
+      },
+    ],
   },
   {
     top: 690,
     left: 150,
     cityName: "São José da C. Grande",
+    beaches: [
+      {
+        name: "Praia de São José da C. Grande",
+        address: "Em frente a R. da Matriz esquina c/ R. João Francisco Melo",
+        category: "Imprópria",
+      },
+    ],
   },
 ];
 
@@ -194,15 +344,27 @@ export default function MapPage() {
           />
         ))}
       </div>
-      <Modal
-        title={city && city.cityName}
-        open={isModalOpen}
-        onOk={closeModal}
-        okText={"Fechar"}
-        cancelButtonProps={{ style: { display: "none" } }}
-      >
-        <h4>Praias</h4>
-      </Modal>
+      {isModalOpen && (
+        <Modal
+          title={city && city.cityName}
+          open={isModalOpen}
+          onOk={closeModal}
+          okText={"Fechar"}
+          cancelButtonProps={{ style: { display: "none" } }}
+          closable={false}
+        >
+          <h4>Praias</h4>
+          <ul>
+            {city.beaches.map((beach, index) => (
+              <li key={index}>
+                <p>{beach.name}</p>
+                <p>{beach.address}</p>
+                <p>{beach.category}</p>
+              </li>
+            ))}
+          </ul>
+        </Modal>
+      )}
     </>
   );
 }

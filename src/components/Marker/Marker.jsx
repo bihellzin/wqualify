@@ -11,6 +11,7 @@ const Marker = ({ top, left, cityName, handleClick, city }) => {
         alignItems: "center",
         fontWeight: "bold",
         color: "#EB580D",
+        cursor: "pointer",
       }}
       className="marker"
       onClick={() => handleClick(city)}
