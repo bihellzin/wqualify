@@ -18,44 +18,47 @@ const CategoriaAgua = () => {
       <h3> Categoria da água</h3>
       <Card bordered={true} bodyStyle={{ padding: "8px 16px" }}>
         {showTable ? (
-          <Table
-            pagination={false}
-            columns={[
-              {
-                title: "Categoria",
-                dataIndex: "categoria",
-                key: "categoria",
-              },
-              {
-                title: "Limite de NMP de coliformes termotolerantes/100ml",
-                dataIndex: "limite",
-                key: "limite",
-              },
-            ]}
-            dataSource={[
-              {
-                key: "excelente",
-                categoria: "Excelente",
-                limite: "Máximo de 250 em 80% ou mais das amostras",
-              },
-              {
-                key: "muito-boa",
-                categoria: "Muito boa",
-                limite: "Máximo de 500 em 80% ou mais das amostras",
-              },
-              {
-                key: "satisfatoria",
-                categoria: "Satisfatória",
-                limite: "Máximo de 1000 em 80% ou mais das amostras",
-              },
-              {
-                key: "impropria",
-                categoria: "Imprópria",
-                limite:
-                  "Acima de 1000 em mais de 20% das amostras ou valor obtido na última amostragem for superior a 2500",
-              },
-            ]}
-          />
+          <>
+            <Table
+              pagination={false}
+              columns={[
+                {
+                  title: "Categoria",
+                  dataIndex: "categoria",
+                  key: "categoria",
+                },
+                {
+                  title: "Limite de NMP de coliformes termotolerantes/100ml",
+                  dataIndex: "limite",
+                  key: "limite",
+                },
+              ]}
+              dataSource={[
+                {
+                  key: "excelente",
+                  categoria: "Excelente",
+                  limite: "Máximo de 250 em 80% ou mais das amostras",
+                },
+                {
+                  key: "muito-boa",
+                  categoria: "Muito boa",
+                  limite: "Máximo de 500 em 80% ou mais das amostras",
+                },
+                {
+                  key: "satisfatoria",
+                  categoria: "Satisfatória",
+                  limite: "Máximo de 1000 em 80% ou mais das amostras",
+                },
+                {
+                  key: "impropria",
+                  categoria: "Imprópria",
+                  limite:
+                    "Acima de 1000 em mais de 20% das amostras ou valor obtido na última amostragem for superior a 2500",
+                },
+              ]}
+            />
+            <p>Fonte: CPRH</p>
+          </>
         ) : (
           <p>
             Águas usadas para banho (mar e rios) e recreação se classificam em 4
