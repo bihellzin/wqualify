@@ -378,6 +378,10 @@ export default function MapPage() {
               </li>
             ))}
           </ul>
+          <p style={{ margin: 0 }}>Fonte: CPRH</p>
+          <p style={{ margin: 0 }}>
+            Dados referentes a: 21/08/2023 a 28/08/2023
+          </p>
         </Modal>
       )}
     </>
