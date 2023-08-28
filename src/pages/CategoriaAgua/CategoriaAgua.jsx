@@ -68,25 +68,27 @@ const CategoriaAgua = () => {
           </p>
         )}
       </Card>
-      <Button
-        shape="circle"
-        icon={
-          showTable ? (
-            <BiChevronLeftCircle size={30} />
-          ) : (
-            <BiChevronRightCircle size={30} />
-          )
-        }
-        size="large"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 8,
-        }}
-        onClick={() => setShowTable((prev) => !prev)}
-      />
+      <div style={{ height: 160 }}>
+        <Button
+          shape="circle"
+          icon={
+            showTable ? (
+              <BiChevronLeftCircle size={30} />
+            ) : (
+              <BiChevronRightCircle size={30} />
+            )
+          }
+          size="large"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 8,
+          }}
+          onClick={() => setShowTable((prev) => !prev)}
+        />
+      </div>
     </div>
   );
 };
