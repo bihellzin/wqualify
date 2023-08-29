@@ -7,6 +7,7 @@ import Sidebar from "./components/Siderbar/Sidebar";
 import Balneabilidade from "./pages/Balneabilidade/Balneabilidade";
 import CategoriaAgua from "./pages/CategoriaAgua/CategoriaAgua";
 import MapPage from "./pages/Map/Map";
+import Riscos from "./pages/Riscos/Riscos";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/balneabilidade" element={<Balneabilidade />} />
         <Route path="/categoria-agua" element={<CategoriaAgua />} />
+        <Route path="/riscos" element={<Riscos />} />
         <Route path="/mapa" element={<MapPage />} />
       </Routes>
       <Sidebar sidebarOpen={sidebarOpen} handleSidebarOpen={setSidebarOpen} />

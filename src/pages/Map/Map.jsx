@@ -256,7 +256,7 @@ const cities = [
 export default function MapPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [city, setCity] = useState(null);
-  console.log(city);
+
   function onMarkerClick(city) {
     setIsModalOpen(true);
     setCity(city);
