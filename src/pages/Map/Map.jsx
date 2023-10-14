@@ -380,7 +380,7 @@ export default function MapPage() {
           </ul>
           <p style={{ margin: 0 }}>Fonte: CPRH</p>
           <p style={{ margin: 0 }}>
-            Dados referentes a: 25/08/2023 a 01/09/2023
+            Dados referentes a: 15/10/2023 a 21/10/2023
           </p>
         </Modal>
       )}
