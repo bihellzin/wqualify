@@ -49,7 +49,7 @@ const markers = [
 ];
 
 const categoryColors = {
-  Excelente: "#15880d",
+  Propría: "#15880d",
   "Muito Boa": "#6fb302",
   Satisfatória: "#C59F1B",
   Imprópria: "#ED1010",
