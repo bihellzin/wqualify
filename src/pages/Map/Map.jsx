@@ -64,17 +64,17 @@ const cities = [
       {
         address: "em frente à Rua Santina de Barros",
         name: "Praia de Jaguaribe",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         address: "em frente à Igreja do Pilar",
         name: "Praia de Pilar",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         address: "em frente ao Forte Orange",
         name: "Praia do Forte",
-        category: "Imprópria",
+        category: "Propría",
       },
     ],
   },
@@ -144,7 +144,7 @@ const cities = [
         name: "Praia de Boa Viagem",
         address:
           "em frente à Avenida Boa Viagem Nº 2840 - Posto 8 (Padaria Boa Viagem)",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         name: "Praia de Boa Viagem",
@@ -168,18 +168,18 @@ const cities = [
         name: "Praia de Candeias",
         address:
           "em frente à Av. Bernardo V. de Melo Nº 5422 (Conj. Residencial Candeias II)",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         name: "Praia de Candeias",
         address:
           "em frente à Av. Bernardo V. de Melo Nº 6476 - Restaurante Candelária",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         name: "Praia de Barra de Jangada",
         address: "em frente ao Nº 10800 (antiga Marina dos Mares)",
-        category: "Imprópria",
+        category: "Propría",
       },
     ],
   },
@@ -191,12 +191,12 @@ const cities = [
       {
         name: "Praia de Enseada dos Corais",
         address: "em frente ao Canal do Boto",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         name: "Praia de Gaibu",
         address: "em frente à Avenida Laura Cavalcanti (Centro de Turismo)",
-        category: "Imprópria",
+        category: "Propría",
       },
     ],
   },
@@ -208,12 +208,12 @@ const cities = [
       {
         name: "Praia de Porto de Galinhas",
         address: "em frente à R. Esperança, Escola Manuel L. C. Uchoa",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         name: "Praia de Ponta de Serrambi",
         address: "no Pontal - Quadra 01-01, Lote 01-01",
-        category: "Imprópria",
+        category: "Propría",
       },
     ],
   },
@@ -230,7 +230,7 @@ const cities = [
       {
         name: "Praia de Tamandaré",
         address: "em frente ao Hotel Marinas de Tamandaré",
-        category: "Imprópria",
+        category: "Propría",
       },
       {
         name: "Praia de Tamandaré",
