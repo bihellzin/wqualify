@@ -64,17 +64,17 @@ const cities = [
       {
         address: "em frente à Rua Santina de Barros",
         name: "Praia de Jaguaribe",
-        category: "Propría",
+        category: "Impropría",
       },
       {
         address: "em frente à Igreja do Pilar",
         name: "Praia de Pilar",
-        category: "Propría",
+        category: "Impropría",
       },
       {
         address: "em frente ao Forte Orange",
         name: "Praia do Forte",
-        category: "Propría",
+        category: "Impropría",
       },
     ],
   },
@@ -138,7 +138,7 @@ const cities = [
         name: "Praia do Pina",
         address:
           "em frente à Rua Com. Morais com Eng. Antônio de Góes (Cassino Americano)",
-        category: "Imprópria",
+        category: "Própria",
       },
       {
         name: "Praia de Boa Viagem",
@@ -225,12 +225,12 @@ const cities = [
       {
         name: "Praia dos Carneiros",
         address: "em frente ao Condomínio Pontal dos Carneiros",
-        category: "Imprópria",
+        category: "Própria",
       },
       {
         name: "Praia de Tamandaré",
         address: "em frente ao Hotel Marinas de Tamandaré",
-        category: "Propría",
+        category: "Imprópria",
       },
       {
         name: "Praia de Tamandaré",
@@ -380,7 +380,7 @@ export default function MapPage() {
           </ul>
           <p style={{ margin: 0 }}>Fonte: CPRH</p>
           <p style={{ margin: 0 }}>
-            Dados referentes a: 22/10/2023 a 29/10/2023
+            Dados referentes a: 30/10/2023 a 06/11/2023
           </p>
         </Modal>
       )}
