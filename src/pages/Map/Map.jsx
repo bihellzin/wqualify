@@ -125,7 +125,7 @@ const cities = [
       {
         name: "Praia dos Milagres",
         address: "em frente à Praça dos Milagres",
-        category: "Imprópria",
+        category: "Própria",
       },
     ],
   },
@@ -149,7 +149,7 @@ const cities = [
       {
         name: "Praia de Boa Viagem",
         address: "em frente à Avenida Boa Viagem Nº 6958 - Posto 15",
-        category: "Imprópria",
+        category: "Própria",
       },
     ],
   },
@@ -213,7 +213,7 @@ const cities = [
       {
         name: "Praia de Ponta de Serrambi",
         address: "no Pontal - Quadra 01-01, Lote 01-01",
-        category: "Propría",
+        category: "Imprópria",
       },
     ],
   },
@@ -247,7 +247,7 @@ const cities = [
       {
         name: "Praia de São José da C. Grande",
         address: "em frente a R. da Matriz esquina c/ R. João Francisco Melo",
-        category: "Imprópria",
+        category: "Própria",
       },
     ],
   },
@@ -380,7 +380,7 @@ export default function MapPage() {
           </ul>
           <p style={{ margin: 0 }}>Fonte: CPRH</p>
           <p style={{ margin: 0 }}>
-            Dados referentes a: 30/10/2023 a 06/11/2023
+            Dados referentes a: 10/11/2023 a 16/11/2023
           </p>
         </Modal>
       )}
