@@ -49,7 +49,7 @@ const markers = [
 ];
 
 const categoryColors = {
-  Propría: "#15880d",
+  Própria: "#15880d",
   "Muito Boa": "#6fb302",
   Satisfatória: "#C59F1B",
   Imprópria: "#ED1010",
@@ -64,17 +64,17 @@ const cities = [
       {
         address: "em frente à Rua Santina de Barros",
         name: "Praia de Jaguaribe",
-        category: "Impropría",
+        category: "Imprópria",
       },
       {
         address: "em frente à Igreja do Pilar",
         name: "Praia de Pilar",
-        category: "Impropría",
+        category: "Própria",
       },
       {
         address: "em frente ao Forte Orange",
         name: "Praia do Forte",
-        category: "Impropría",
+        category: "Própria",
       },
     ],
   },
@@ -97,7 +97,7 @@ const cities = [
       {
         name: "Praia do Janga",
         address: "em frente à Rua Betânia",
-        category: "Imprópria",
+        category: "Própria",
       },
     ],
   },
@@ -125,7 +125,7 @@ const cities = [
       {
         name: "Praia dos Milagres",
         address: "em frente à Praça dos Milagres",
-        category: "Própria",
+        category: "Imprópria",
       },
     ],
   },
@@ -138,13 +138,13 @@ const cities = [
         name: "Praia do Pina",
         address:
           "em frente à Rua Com. Morais com Eng. Antônio de Góes (Cassino Americano)",
-        category: "Própria",
+        category: "Imprópria",
       },
       {
         name: "Praia de Boa Viagem",
         address:
           "em frente à Avenida Boa Viagem Nº 2840 - Posto 8 (Padaria Boa Viagem)",
-        category: "Propría",
+        category: "Própria",
       },
       {
         name: "Praia de Boa Viagem",
@@ -162,13 +162,13 @@ const cities = [
         name: "Praia de Piedade",
         address:
           "em frente à Avenida Beira Mar Nº 606 (Hospital da Aeronáutica)",
-        category: "Imprópria",
+        category: "Própria",
       },
       {
         name: "Praia de Candeias",
         address:
           "em frente à Av. Bernardo V. de Melo Nº 5422 (Conj. Residencial Candeias II)",
-        category: "Propría",
+        category: "Própria",
       },
       {
         name: "Praia de Candeias",
@@ -179,7 +179,7 @@ const cities = [
       {
         name: "Praia de Barra de Jangada",
         address: "em frente ao Nº 10800 (antiga Marina dos Mares)",
-        category: "Propría",
+        category: "Imprópria",
       },
     ],
   },
@@ -191,12 +191,12 @@ const cities = [
       {
         name: "Praia de Enseada dos Corais",
         address: "em frente ao Canal do Boto",
-        category: "Propría",
+        category: "Própria",
       },
       {
         name: "Praia de Gaibu",
         address: "em frente à Avenida Laura Cavalcanti (Centro de Turismo)",
-        category: "Propría",
+        category: "Própria",
       },
     ],
   },
@@ -208,7 +208,7 @@ const cities = [
       {
         name: "Praia de Porto de Galinhas",
         address: "em frente à R. Esperança, Escola Manuel L. C. Uchoa",
-        category: "Propría",
+        category: "Própria",
       },
       {
         name: "Praia de Ponta de Serrambi",
@@ -230,12 +230,12 @@ const cities = [
       {
         name: "Praia de Tamandaré",
         address: "em frente ao Hotel Marinas de Tamandaré",
-        category: "Imprópria",
+        category: "Própria",
       },
       {
         name: "Praia de Tamandaré",
         address: "em frente à Rua Nilo Gouveia Filho, em frente à estátua",
-        category: "Imprópria",
+        category: "Própria",
       },
     ],
   },
@@ -380,7 +380,7 @@ export default function MapPage() {
           </ul>
           <p style={{ margin: 0 }}>Fonte: CPRH</p>
           <p style={{ margin: 0 }}>
-            Dados referentes a: 10/11/2023 a 16/11/2023
+            Dados referentes a: 17/10/2025 a 23/10/2025
           </p>
         </Modal>
       )}
