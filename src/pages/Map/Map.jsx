@@ -174,7 +174,7 @@ const cities = [
         name: "Praia de Candeias",
         address:
           "em frente à Av. Bernardo V. de Melo Nº 6476 - Restaurante Candelária",
-        category: "Propría",
+        category: "Própria",
       },
       {
         name: "Praia de Barra de Jangada",
